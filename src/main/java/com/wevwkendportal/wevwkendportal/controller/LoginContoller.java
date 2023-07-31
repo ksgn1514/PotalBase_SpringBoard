@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class LoginContoller {
 
     @GetMapping("/")
-    public String index() {
+    public String dog() {
 
 		return "content/login";
 	}
