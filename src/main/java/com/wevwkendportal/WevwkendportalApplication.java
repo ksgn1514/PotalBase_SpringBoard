@@ -1,4 +1,4 @@
-package com.wevwkendportal.wevwkendportal;
+package com.wevwkendportal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
