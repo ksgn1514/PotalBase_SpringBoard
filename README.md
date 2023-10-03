@@ -1,7 +1,7 @@
 # 위버스 주말반 포털 사이트
 <br/>
 <p align="center">
-  <img width="100" alt="7" src="http://www.weavus-group.com/assets/img/weavus%20CI.png">
+  <img  alt="7" src="http://www.weavus-group.com/assets/img/weavus%20CI.png">
 </p>
 
 ## Description
