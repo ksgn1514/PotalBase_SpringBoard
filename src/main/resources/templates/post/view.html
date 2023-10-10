@@ -189,10 +189,11 @@
 
                 const postId = [[ ${post.id} ]];
                 const uri = `/posts/${postId}/comments`;
+                const writer = [[ ${session.loginMember.name} ]];
                 const params = {
                     postId : postId,
                     content : content.value,
-                    writer : '홍길동'
+                    writer : writer
                 }
 
                 callApi(uri, 'post', params);
