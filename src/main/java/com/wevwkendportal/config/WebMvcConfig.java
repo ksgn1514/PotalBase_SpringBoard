@@ -5,6 +5,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.wevwkendportal.interceptor.LoggerInterceptor;
+import com.wevwkendportal.interceptor.LoginCheckInterceptor;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -12,5 +13,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoggerInterceptor())
                 .excludePathPatterns("/css/**", "/images/**", "/js/**");
+
+        registry.addInterceptor(new LoginCheckInterceptor())
+                .addPathPatterns("/**/*.do")
+                .excludePathPatterns("/log*");
     }
 }
