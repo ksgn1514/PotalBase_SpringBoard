@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wevwkendportal.domain.post.PostMapper">
+<mapper namespace="com.potalbase_springboard.domain.post.PostMapper">
 
     <!-- tb_post 테이블 전체 컬럼 -->
     <sql id="postColumns">
@@ -51,7 +51,7 @@
 
 
     <!-- 게시글 저장 -->
-    <insert id="save" parameterType="com.wevwkendportal.domain.post.PostRequest" useGeneratedKeys="true" keyProperty="id">
+    <insert id="save" parameterType="com.potalbase_springboard.domain.post.PostRequest" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO tb_post (
             <include refid="postColumns" />
         ) VALUES (
@@ -69,7 +69,7 @@
 
 
     <!-- 게시글 상세정보 조회 -->
-    <select id="findById" parameterType="long" resultType="com.wevwkendportal.domain.post.PostResponse">
+    <select id="findById" parameterType="long" resultType="com.potalbase_springboard.domain.post.PostResponse">
         SELECT
             <include refid="postColumns" />
         FROM
@@ -80,7 +80,7 @@
 
 
     <!-- 게시글 수정 -->
-    <update id="update" parameterType="com.wevwkendportal.domain.post.PostRequest">
+    <update id="update" parameterType="com.potalbase_springboard.domain.post.PostRequest">
         UPDATE tb_post
         SET
               modified_date = NOW()
@@ -104,7 +104,7 @@
 
 
     <!-- 게시글 리스트 조회 -->
-    <select id="findAll" parameterType="com.wevwkendportal.common.dto.SearchDto" resultType="com.wevwkendportal.domain.post.PostResponse">
+    <select id="findAll" parameterType="com.potalbase_springboard.common.dto.SearchDto" resultType="com.potalbase_springboard.domain.post.PostResponse">
         SELECT
             <include refid="postColumns" />
         FROM
@@ -119,7 +119,7 @@
 
 
     <!-- 게시글 수 카운팅 -->
-    <select id="count" parameterType="com.wevwkendportal.common.dto.SearchDto" resultType="int">
+    <select id="count" parameterType="com.potalbase_springboard.common.dto.SearchDto" resultType="int">
         SELECT
             COUNT(*)
         FROM

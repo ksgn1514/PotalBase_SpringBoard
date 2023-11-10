@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wevwkendportal.domain.member.MemberMapper">
+<mapper namespace="com.potalbase_springboard.domain.member.MemberMapper">
 
     <!-- tb_member 테이블 전체 컬럼 -->
     <sql id="memberColumns">
@@ -18,7 +18,7 @@
 
 
     <!-- 회원 정보 저장 (회원가입) -->
-    <insert id="save" parameterType="com.wevwkendportal.domain.member.MemberRequest" useGeneratedKeys="true" keyProperty="id">
+    <insert id="save" parameterType="com.potalbase_springboard.domain.member.MemberRequest" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO tb_member (
             <include refid="memberColumns" />
         ) VALUES (
@@ -36,7 +36,7 @@
 
 
     <!-- 회원 상세정보 조회 -->
-    <select id="findByLoginId" parameterType="string" resultType="com.wevwkendportal.domain.member.MemberResponse">
+    <select id="findByLoginId" parameterType="string" resultType="com.potalbase_springboard.domain.member.MemberResponse">
         SELECT
             <include refid="memberColumns" />
         FROM
@@ -48,7 +48,7 @@
 
 
     <!-- 회원 정보 수정 -->
-    <update id="update" parameterType="com.wevwkendportal.domain.member.MemberRequest">
+    <update id="update" parameterType="com.potalbase_springboard.domain.member.MemberRequest">
         UPDATE tb_member
         SET
               modified_date = NOW()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wevwkendportal.domain.comment.CommentMapper">
+<mapper namespace="com.potalbase_springboard.domain.comment.CommentMapper">
 
     <!-- tb_comment 테이블 전체 컬럼 -->
     <sql id="commentColumns">
@@ -16,7 +16,7 @@
 
 
     <!-- 댓글 저장 -->
-    <insert id="save" parameterType="com.wevwkendportal.domain.comment.CommentRequest" useGeneratedKeys="true" keyProperty="id">
+    <insert id="save" parameterType="com.potalbase_springboard.domain.comment.CommentRequest" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO tb_comment (
             <include refid="commentColumns" />
         ) VALUES (
@@ -32,7 +32,7 @@
 
 
     <!-- 댓글 상세정보 조회 -->
-    <select id="findById" parameterType="long" resultType="com.wevwkendportal.domain.comment.CommentResponse">
+    <select id="findById" parameterType="long" resultType="com.potalbase_springboard.domain.comment.CommentResponse">
         SELECT
             <include refid="commentColumns" />
         FROM
@@ -43,7 +43,7 @@
 
 
     <!-- 댓글 수정 -->
-    <update id="update" parameterType="com.wevwkendportal.domain.comment.CommentRequest">
+    <update id="update" parameterType="com.potalbase_springboard.domain.comment.CommentRequest">
         UPDATE tb_comment
         SET
               modified_date = NOW()
@@ -65,7 +65,7 @@
 
 
     <!-- 댓글 리스트 조회 -->
-    <select id="findAll" parameterType="com.wevwkendportal.domain.comment.CommentSearchDto" resultType="com.wevwkendportal.domain.comment.CommentResponse">
+    <select id="findAll" parameterType="com.potalbase_springboard.domain.comment.CommentSearchDto" resultType="com.potalbase_springboard.domain.comment.CommentResponse">
         SELECT
             <include refid="commentColumns" />
         FROM
@@ -79,7 +79,7 @@
     </select>
 
     <!-- 댓글 수 카운팅 -->
-    <select id="count" parameterType="com.wevwkendportal.domain.comment.CommentSearchDto" resultType="int">
+    <select id="count" parameterType="com.potalbase_springboard.domain.comment.CommentSearchDto" resultType="int">
         SELECT
             COUNT(*)
         FROM
